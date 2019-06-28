@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
+  "author": {
+    "name": "Your Name",
+    "email": "your.email@domain.com",
+    "url": "https://your-website.com"
+  },
   "dependencies": {
     "electron-is-dev": "^1.1.0",
     "react": "^16.8.6",
@@ -16,8 +21,23 @@
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"BROWSER=none yarn web\" \"wait-on http://localhost:3000 && electron public/electron.js\"",
     "postinstall": "electron-builder install-app-deps",
-    "preelectron-pack": "yarn build",
+    "preelectron-pack": "yarn web-build",
     "electron-pack": "build -mw"
+  },
+  "build": {
+    "appId": "com.my-website.my-app",
+    "productName": "MyApp",
+    "copyright": "Copyright © 2019 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,5 +62,8 @@
     "electron-builder": "^20.44.4",
     "typescript": "^3.5.2",
     "wait-on": "^3.2.0"
-  }
+  },
+  "rescripts": [
+    "env"
+  ]
 }
