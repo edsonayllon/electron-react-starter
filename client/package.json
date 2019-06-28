@@ -14,7 +14,10 @@
     "web-build": "rescripts build",
     "web-test": "rescripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"BROWSER=none yarn web\" \"wait-on http://localhost:3000 && electron public/electron.js\""
+    "electron-dev": "concurrently \"BROWSER=none yarn web\" \"wait-on http://localhost:3000 && electron public/electron.js\"",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "yarn build",
+    "electron-pack": "build -mw"
   },
   "eslintConfig": {
     "extends": "react-app"
