@@ -19,10 +19,10 @@
     "web-build": "rescripts build",
     "web-test": "rescripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"BROWSER=none yarn web\" \"wait-on http://localhost:3000 && electron public/electron.js\"",
+    "desktop": "concurrently \"cross-env BROWSER=none yarn web\" \"wait-on http://localhost:3000 && electron public/electron.js\"",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "yarn web-build",
-    "electron-pack": "build -mw"
+    "desktop-build": "build -mw"
   },
   "build": {
     "appId": "com.my-website.my-app",
@@ -58,6 +58,7 @@
     "@rescripts/cli": "^0.0.10",
     "@rescripts/rescript-env": "^0.0.10",
     "concurrently": "^4.1.1",
+    "cross-env": "^5.2.0",
     "electron": "^5.0.6",
     "electron-builder": "^20.44.4",
     "typescript": "^3.5.2",
