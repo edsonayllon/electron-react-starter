@@ -8,7 +8,7 @@ status: complete
 twitter: https://twitter.com/relativeread
 ---
 
-## Starter 5-2018 
+## Starter 5-2019
 
 # Electron React Starter
 
